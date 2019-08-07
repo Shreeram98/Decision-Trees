@@ -1,5 +1,5 @@
 # Decision-Trees
-Explanation of Decision Trees
+
 Decision trees are supervised learning algorithms used for both, classification and regression task
 Decision trees are assigned to the information based learning algorithms which use different measures of information gain for learning.
 We can use decision trees for issues where we have continuous but also categorical input and target features. The main idea of decision trees is to find those descriptive features which contain the most "information" regarding the target feature and
@@ -8,7 +8,7 @@ It is similar to finding the Principal Components which have a greater effect on
 This process of finding the "most informative" feature is done until we accomplish a stopping criteria where we then finally end up in so called leaf nodes.
 A decision tree mainly contains of a root node, interior nodes, and leaf nodes which are then connected by branches.There can be only one root node and many internal nodes represented by ellipses and the leaf node is denoted by reactangular box.
 
-How do we train the decision tree to make decisions?
+#How do we train the decision tree to make decisions?
 1.Present a dataset containing of a number of training instances characterized by a number of descriptive features and a target
   feature
 2.Train the decision tree model by continuously splitting the target feature along the values of the descriptive features using a
@@ -36,7 +36,7 @@ So what is Entropy?Suppose you have a bag consisting of 100 white balls(Pure).If
 Therefore we can say that,the more "impure" a dataset, the higher the entropy and the less "impure" a dataset, the lower the entropy.
 Also if we have more than one target feature value, the impurity will be greater than zero.It is useful to sum up the entropies of each possible target feature value and weight it by the probability that we randomly picked up the required class.
 
-					IG= -[(sum of{P(x=k)*log2(P(x=k))}]
+#IG= -[(sum of{P(x=k)*log2(P(x=k))}]
 
 Let us find the IG for our example.
 
@@ -52,7 +52,7 @@ We find the most informative feature by splitting the dataset using that feature
 					IG(feature)= (Entropy(D) - Entropy(feature)
 The feature with more IG is the feature that best splits the dataset.
 
-Advantges and Disadvantages of Decision Trees:
+#Advantges and Disadvantages of Decision Trees:
 Advantages:	Easy to interpret
 		Need not normalize the data
 		It can handle both continuous and categorical data
@@ -60,7 +60,7 @@ Advantages:	Easy to interpret
 Disadvantages:	If there are too many continuous features the tree becomes quite large and interpretation may be difficult.
 		Decision Trees are prone to OVERFIT the training data.(Solutions will be discussed)
 		Small changes in data may lead to form a completely different tree
-		If the data has target features that occur frequently in the dataset,the tree may be biased towards that feature.
+		If the data has target features that occur frequently in the dataset,the tree may be biased towards that 		 feature.
 		
 What if the target features are continuously scaled rather than categorically scaled?
 Then we call the tree model as Regression Tree model instead of Classification tree model.Therefore we can use the variance of the target feature as splitting measure instead of using the IG.The feature with lowest weighted variance is the best splitting feature
@@ -69,7 +69,7 @@ Solution to afore mentioned problem of Overfitting:
 One approach to increase the accuracy of a tree model is to use an ensemble approach. With an ensemble approach we create different models (in this case) trees from the original dataset and let the different models make a majority vote on the test dataset. That is, we predict the target values for the test dataset using each of the created models and then return this target feature value which has been predicted by the majority of the models.
 The most prominent approaches to create decision tree ensemble models are called bagging and boosting.
 A variant of a boosting-based decision tree ensemble model is called random forest model which is one of the most powerful machine learning algorithms.
-Bagging:
+#Bagging:
 
  Bagging stands for Bootstrap Aggregation.
  Suppose there are N observations and M features. A sample from observation is selected randomly with replacement.
@@ -80,7 +80,7 @@ Bagging:
 This can be chosen by increasing the number of trees on run after run until the accuracy begins to stop showing improvement.
 In the process of bagging we are not concerned about individual trees overfitting the training data.
 
-Boosting:
+#Boosting:
 
 A bunch of weak learners which performs just slightly better than random guessing can be combined to make better predictions than one strong learner.
 Boosting refers to a group of algorithms that utilize weighted averages to make weak learners into stronger learners.
